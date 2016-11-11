@@ -47,7 +47,11 @@ function insert_item(){
 }
 function set_max(){
     var newMax=document.getElementById('new_max');
-    //set to span max & display
-    max=parseInt(newMax.value);
-    document.getElementById('max').innerHTML=max;
+    if(newMax.value!="" && newMax.value>0){
+        //set to span max & display
+        max=parseInt(newMax.value);
+        document.getElementById('max').innerHTML=max;
+    }
+    else
+        alert("Error: You must insert a number>0 in New Capacity field ");
 }
