@@ -1,8 +1,105 @@
-<html>
+<!DOCTYPE html>
+  <html>
     <head>
-        <title></title>
+        <title>Js Table</title>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
+
     <body>
-    
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo center"><i class="material-icons">shopping_cart</i>Azam Wearhouse</a>
+            </div>
+        </nav>
+        <br>
+        <div class="container">
+        <!-- Page Content goes here -->
+        <div class="row">
+            <div class="col s6 card-panel">
+                <!--Tabella che visualizza materiali di un wearhouse-->
+                <table id="tabella" class="striped">
+                    <thead>
+                        <tr>
+                            <th data-field="name">Item Name</th>
+                            <th data-field="price">Item Quantity</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>T-Shirt</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Pant</td>
+                            <td>30</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+            </div>
+            <div class="col s1"></div>
+            <div class="col s5">
+                <!--set massimo di quantità-->
+                <div class="card-panel">
+                    <div class="row">
+                        <div class="col s4">
+                            <i class="material-icons prefix">settings</i>
+                        </div>
+                        <div class="col s8 right-align">
+                            <p>Max Capacity: <span id="max" class="blue-text">--</span></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6 center-align">
+                            <input id="new_max" type="text" class="validate">
+                            <label for="new_max">New Capacity</label>
+                        </div>
+                        <div class="input-field col s6 center-align">
+                            <a class="waves-effect waves-light btn" onclick="set_max()">Set</a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <!--contenitore che inserisce un nuovo elemento-->
+                <div>
+                    <div class="center-align">
+                        <a class="waves-effect waves-light btn-large" onclick="toggle_insert()"><i class="material-icons left">playlist_add</i>Insert a new item</a>
+                    </div>
+                    <br>
+                    <form id="insert-form" class="card-panel" style="display:none">
+                        <i class="material-icons prefix">input</i>
+                        <div class="row">
+                            <div class="input-field col s12">
+                            <input id="name" type="text" class="validate">
+                            <label for="name">Item Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                            <input id="quantity" type="text" class="validate">
+                            <label for="quantity">Quantity</label>
+                            </div>
+                        </div>
+                        <div class="center-align">
+                            <a class="waves-effect waves-light btn blue" onclick="insert_item()">Insert</a>
+                        </div>
+                    </form>
+                </div>
+                
+
+            </div>
+        </div>
+        </div>
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/table.js"></script>
     </body>
-</html>
+  </html>
