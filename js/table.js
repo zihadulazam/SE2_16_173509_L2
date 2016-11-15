@@ -39,6 +39,7 @@ function insert_item(){
                 alert("Attention !!! Total Capacity OverFlowed");
             newName.value="";
             newQuant.value="";
+            toggle_insert();
         }
         else{
             alert("Error: You must insert a number in Quantity field");
